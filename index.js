@@ -194,7 +194,9 @@ app.use(bodyParser.json());
 //   })
 //   res.send("Done :)");
 // });
+const authRoutes = require("./routes/authRoutes");
 
+app.use("/auth", authRoutes);
 app.get("/allHoldings", async(req,res)=>{
   let allHoldings=await HoldingsModel.find({});
   res.json(allHoldings);
